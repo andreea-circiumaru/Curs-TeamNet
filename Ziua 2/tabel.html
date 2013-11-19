@@ -1,0 +1,123 @@
+<?DOCTYPE html>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			$(function() {
+				$('.linie').click(function() {
+					$(this).html('');
+				});
+
+				$('#formular-submit').click(function(e) {
+
+					e.preventDefault();
+					var nume = $('#formular-nume').val();
+					$('#formular-nume').val('');
+					var prenume = $('#formular-prenume').val();
+					var varsta = $('#formular-varsta').val();
+					var depart = $('#formular-dep').val();
+					var data = $('#formular-data').val();
+					var poz = $('#formular-pozitie').val();
+
+					alert('Am adaugat cu succes!');
+
+					var linie = '<tr class="linie" id="linie_adaugata">' +
+						'<td class="cel">' + nume + '</td>' +
+						'<td class="cel">' + prenume + '</td>' +
+						'<td class="cel">' + varsta + '</td>' +
+						'<td class="cel">' + depart + '</td>' +
+						'<td class="cel">' + data + '</td>' +
+						'<td class="cel">' + poz + '</td>' +
+					'</tr>';
+
+					$('#myTable').append(linie);
+
+					$('.linie').click(function() {
+					$(this).html('');
+				});
+
+				});
+
+			});
+		</script>
+		<title>Tabel angajati</title>
+		<link rel="stylesheet" href="stil.css" />
+	</head>
+
+	<body>
+		<h2>Tabel</h2>
+
+		<table class="main-table" id="myTable">
+			<thead>
+				<tr class="linie-header">
+					<td>Nume</td>
+					<td>Prenume</td>
+					<td>Varsta</td>
+					<td>Departament</td>
+					<td>Data angajarii</td>
+					<td>Pozitia ocupata</td>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr class="linie" id="linia_care_dispare">
+					<td class="cel">Nume1</td>
+					<td class="cel">Prenume1</td>
+					<td class="cel">10</td>
+					<td class="cel">Departament1</td>
+					<td class="cel">1.10.2010</td>
+					<td class="cel">Pozitia1</td>
+				</tr>
+
+				<tr class="linie">
+					<td class="cel">Nume2</td>
+					<td class="cel">Prenume2</td>
+					<td class="cel">20</td>
+					<td class="cel">Departament2</td>
+					<td class="cel">2.10.2010</td>
+					<td class="cel">Pozitia2</td>
+				</tr>
+
+				<tr class="linie">
+					<td class="cel">Nume3</td>
+					<td class="cel">Prenume3</td>
+					<td class="cel">30</td>
+					<td class="cel">Departament3</td>
+					<td class="cel">3.10.2010</td>
+					<td class="cel">Pozitia3</td>
+				</tr>
+
+				<tr class="linie">
+					<td class="cel">Nume4</td>
+					<td class="cel">Prenume4</td>
+					<td class="cel">40</td>
+					<td class="cel">Departament4</td>
+					<td class="cel">4.10.2010</td>
+					<td class="cel">Pozitia4</td>
+				</tr>
+
+				<tr class="linie">
+					<td class="cel">Nume5</td>
+					<td class="cel">Prenume5</td>
+					<td class="cel">50</td>
+					<td class="cel">Departament5</td>
+					<td class="cel">5.10.2010</td>
+					<td class="cel">Pozitia5</td>
+				</tr>
+
+			</tbody>
+
+			<p>Insereaza student</p>
+			<form id="formular">
+				<p>Nume: <input id="formular-nume" type="text" /></p>
+				<p>Prenume: <input id="formular-prenume" type="text" /></pr>
+				<p>Varsta: <input id="formular-varsta" type="text" /></p>
+				<p>Departament: <input id="formular-dep" type="text" /></p>
+				<p>Data angajarii: <input id="formular-data" type="text" /></p>
+				<p>Pozitia ocupata: <input id="formular-pozitie" type="text" /></p>
+				<button id="formular-submit" type="submit">Insert</button>
+				<p></p>
+			</form>
+
+	</body>
+</html>
